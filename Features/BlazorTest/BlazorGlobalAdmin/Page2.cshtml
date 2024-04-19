@@ -1,0 +1,11 @@
+﻿@using OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest
+@{
+    Layout = "/Views/Shared/Layouts/_LayoutBlazorAdminPage.cshtml";
+}
+<h1>Page 2</h1>
+<p><span class="axiom-typography--body">Page 2 of the blazor global admin.</span></p>
+
+<p><strong>|---</strong>
+    @(await Html.RenderComponentAsync<OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.MyBlazorCounterComponent>(Microsoft.AspNetCore.Mvc.Rendering.RenderMode.Server))
+    <strong>---|</strong>
+</p>

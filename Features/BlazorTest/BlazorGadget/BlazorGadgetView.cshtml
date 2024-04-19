@@ -1,0 +1,9 @@
+﻿@using OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest
+@model OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorGadget.BlazorGadgetViewModel
+@{
+    Layout = "/Views/Shared/Layouts/_LayoutBlazorGadget.cshtml";
+}
+
+<p><strong>Blazor gadget for this page (@(Model.ContentReference?.ID)).</strong>
+    @(await Html.RenderComponentAsync<OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.MyBlazorCounterComponent>(Microsoft.AspNetCore.Mvc.Rendering.RenderMode.Server, new { ContentId = Model.ContentReference?.ID }))
+</p>

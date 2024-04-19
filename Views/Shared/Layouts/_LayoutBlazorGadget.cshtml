@@ -1,0 +1,27 @@
+﻿@using EPiServer.Framework.Web.Resources
+@using EPiServer.Shell.Navigation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blazor gadget</title>
+
+    <!-- Shell -->
+    @ClientResources.RenderResources("ShellCore")
+
+    <!-- LightTheme -->
+    @ClientResources.RenderResources("ShellCoreLightTheme")
+    
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/design.optimizely.com/oui/latest/styles.css" />
+
+    <base href="~/" />
+</head>
+<body>
+    @Html.AntiForgeryToken() <!-- Thanks to: https://world.optimizely.com/blogs/matthew-slim/dates/2023/6/new-menu-system-released/ -->
+    <div @Html.ApplyPlatformNavigation() style="padding-left: 10px">
+
+    @RenderBody()
+
+    </div>
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

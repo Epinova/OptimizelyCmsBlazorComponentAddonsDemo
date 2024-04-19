@@ -1,0 +1,23 @@
+﻿@using EPiServer.Framework.Web.Resources
+@using EPiServer.Shell.Navigation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blazor gadget admin</title>
+
+    <!-- Shell -->
+    @ClientResources.RenderResources("ShellCore")
+
+    <!-- LightTheme -->
+    @ClientResources.RenderResources("ShellCoreLightTheme")
+</head>
+<body>
+    @Html.AntiForgeryToken()
+    @Html.CreatePlatformNavigationMenu()
+    <div @Html.ApplyPlatformNavigation() style="padding-left: 10px">
+
+    @RenderBody()
+
+    </div>
+</body>
+</html>
