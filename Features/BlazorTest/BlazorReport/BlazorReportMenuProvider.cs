@@ -15,7 +15,7 @@ namespace OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorRepor
             optimizelyReports.SortIndex = 100;
 
 
-            var menuItemReport1 = new UrlMenuItem("Blazor Report 1", "/global/cms/report/blazorreport1", "/BlazorReport1/Report1");
+            var menuItemReport1 = new UrlMenuItem("Search for string", "/global/cms/report/blazorreport1", "/BlazorReport1/Report1");
             menuItemReport1.IsAvailable = context => true;
             menuItemReport1.SortIndex = 910;
             menuItemReport1.AuthorizationPolicy = CmsPolicyNames.CmsAdmin;

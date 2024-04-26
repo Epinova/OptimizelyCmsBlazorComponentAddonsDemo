@@ -2,10 +2,12 @@
 @{
     Layout = "/Views/Shared/Layouts/_LayoutBlazorAdminPage.cshtml";
 }
-<h1>Report 1</h1>
-<p><span class="axiom-typography--body">Report 1 description text.</span></p>
 
-<p><strong>|---</strong>
-    @(await Html.RenderComponentAsync<OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.MyBlazorCounterComponent>(Microsoft.AspNetCore.Mvc.Rendering.RenderMode.Server))
-    <strong>---|</strong>
-</p>
+<main>
+    <header>
+        <h1>Search for string</h1>
+        <p><span class="axiom-typography--body">Report 1 description text.</span></p>
+    </header>
+</main>
+
+@(await Html.RenderComponentAsync<OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorReport.Report1Component>(Microsoft.AspNetCore.Mvc.Rendering.RenderMode.Server))

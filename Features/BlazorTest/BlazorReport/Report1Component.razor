@@ -1,0 +1,45 @@
+﻿@inherits Report1ComponentBase
+
+<div class="criterabox">
+    <label class="oui-label" for="SearchString">Search string<span class="oui-label--required"></span></label>
+    <input data-oui-component="true" class="oui-text-input" id="SearchString" type="text" @bind="SearchString">
+    <button data-oui-component="true" class="oui-button oui-button--highlight oui-button--default" type="button" @onclick="SearchForContent" aria-live="polite">Show Report</button>
+</div>
+@if (Items == null)
+{
+    <p><span class="axiom-typography--body">Instructions: Please specify a search string and click on 'Show report' and we will search the database for content containing that phrase in any LongString prop.</span></p>
+}
+else if (!IsLoading && Items.Count == 0)
+{
+    <p><span class="axiom-typography--body">No result</span></p>
+}
+else if (Items != null)
+{
+    <div class="axiom-grid__cell axiom-grid__cell--span-4-small axiom-grid__cell--span-8-medium axiom-grid__cell--span-12-large content-table">
+        <table data-oui-component="true" class="oui-table oui-table--rule oui-table--loose" style="table-layout: fixed;">
+            <thead>
+                <tr>
+                    <th style="width: 45px">Content name</th>
+                    <th style="width: 45px">Property name</th>
+                    <th style="width: 45px">Language</th>
+                    <th style="width: 45px">Path</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Items)
+                {
+                    <tr>
+                        <td><a href="@item.Link" target="_blank">@item.ContentName</a></td>
+                        <td>@item.PropertyName</td>
+                        <td>@item.LanguageCode</td>
+                        <td>@item.ContentPath</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+
+}

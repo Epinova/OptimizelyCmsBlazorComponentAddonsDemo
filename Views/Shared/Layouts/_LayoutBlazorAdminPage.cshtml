@@ -10,15 +10,32 @@
 
     <!-- LightTheme -->
     @ClientResources.RenderResources("ShellCoreLightTheme")
+
+    <script src="/js/spinner.js"></script>
     
-    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/design.optimizely.com/oui/latest/styles.css" />
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 1000px;
+        }
+        div.criteriabox {
+            border: 2px solid #e0e0e0;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+    </style>
 
     <base href="~/" />
 </head>
 <body>
     @Html.AntiForgeryToken() <!-- Thanks to: https://world.optimizely.com/blogs/matthew-slim/dates/2023/6/new-menu-system-released/ -->
     @Html.CreatePlatformNavigationMenu()
-    <div @Html.ApplyPlatformNavigation() style="padding-left: 10px">
+    <div @Html.ApplyPlatformNavigation() style="padding-left: 10px;background: white;padding: 1rem;">
 
     @RenderBody()
 
