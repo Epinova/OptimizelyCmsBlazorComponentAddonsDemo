@@ -1,0 +1,11 @@
+﻿@using OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest
+@{
+    Layout = "/Views/Shared/Layouts/_LayoutBlazorAdminPage.cshtml";
+}
+<h1>Blazor Config</h1>
+<p><span class="axiom-typography--body">This is my config page.</span></p>
+
+<p><strong>|---</strong>
+    @(await Html.RenderComponentAsync<OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.MyBlazorCounterComponent>(Microsoft.AspNetCore.Mvc.Rendering.RenderMode.Server))
+    <strong>---|</strong>
+</p>

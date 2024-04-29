@@ -21,8 +21,4 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Translations\**\*" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="Features\BlazorTest\BlazorSetting\" />
-  </ItemGroup>
 </Project>
