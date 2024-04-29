@@ -1,24 +1,24 @@
 using EPiServer.Authorization;
 using EPiServer.Shell.Navigation;
 
-namespace OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorCmsAdmin
+namespace OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorCmsAddon
 {
     [MenuProvider]
-    public class BlazorCmsAdminMenuProvider : IMenuProvider
+    public class BlazorCmsAddonMenuProvider : IMenuProvider
     {
         public IEnumerable<MenuItem> GetMenuItems()
         {
-            var adminModule = new UrlMenuItem("Blazor CMS Admin", "/global/cms/blazorcmsadmin", "/BlazorCmsAdmin/Overview");
+            var adminModule = new UrlMenuItem("Blazor CMS Add-on", "/global/cms/blazorcmsaddon", "/BlazorCmsAddon/Overview");
             adminModule.IsAvailable = context => true;
             adminModule.SortIndex = 1;
             adminModule.AuthorizationPolicy = CmsPolicyNames.CmsAdmin;
 
-            var menuItemOverview = new UrlMenuItem("Overview", "/global/cms/blazorcmsadmin/overview", "/BlazorCmsAdmin/Overview");
+            var menuItemOverview = new UrlMenuItem("Overview", "/global/cms/blazorcmsaddon/overview", "/BlazorCmsAddon/Overview");
             menuItemOverview.IsAvailable = context => true;
             menuItemOverview.SortIndex = 10;
             menuItemOverview.AuthorizationPolicy = CmsPolicyNames.CmsAdmin;
 
-            var menuItemTwo = new UrlMenuItem("Page 2", "/global/cms/blazorcmsadmin/page2", "/BlazorCmsAdmin/Page2");
+            var menuItemTwo = new UrlMenuItem("Page 2", "/global/cms/blazorcmsaddon/page2", "/BlazorCmsAddon/Page2");
             menuItemTwo.IsAvailable = context => true;
             menuItemTwo.SortIndex = 20;
             menuItemTwo.AuthorizationPolicy = CmsPolicyNames.CmsAdmin;

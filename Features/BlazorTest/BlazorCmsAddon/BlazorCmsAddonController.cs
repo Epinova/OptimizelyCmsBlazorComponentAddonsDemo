@@ -1,16 +1,16 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorCmsAdmin
+namespace OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorCmsAddon
 {
     [Authorize(Roles = "CmsAdmin,WebAdmins,Administrators")]
     [Route("[controller]")]
-    public class BlazorCmsAdminController : Controller
+    public class BlazorCmsAddonController : Controller
     {
-        private readonly ILogger<BlazorCmsAdminController> _logger;
+        private readonly ILogger<BlazorCmsAddonController> _logger;
 
 
-        public BlazorCmsAdminController(ILogger<BlazorCmsAdminController> logger)
+        public BlazorCmsAddonController(ILogger<BlazorCmsAddonController> logger)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
@@ -18,13 +18,13 @@ namespace OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorCmsAd
         [Route("[action]")]
         public IActionResult Overview()
         {
-            return View("/Features/BlazorTest/BlazorCmsAdmin/Overview.cshtml");
+            return View("/Features/BlazorTest/BlazorCmsAddon/Overview.cshtml");
         }
 
         [Route("[action]")]
         public IActionResult Page2()
         {
-            return View("/Features/BlazorTest/BlazorCmsAdmin/Page2.cshtml");
+            return View("/Features/BlazorTest/BlazorCmsAddon/Page2.cshtml");
         }
     }
 }
