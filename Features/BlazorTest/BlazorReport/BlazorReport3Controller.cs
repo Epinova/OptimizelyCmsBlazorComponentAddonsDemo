@@ -1,7 +1,5 @@
-using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorReport
 {
@@ -10,7 +8,6 @@ namespace OptimizelyCmsBlazorComponentAddonsDemo.Features.BlazorTest.BlazorRepor
     public class BlazorReport3Controller : Controller
     {
         private readonly ILogger<BlazorReport3Controller> _logger;
-
 
         public BlazorReport3Controller(ILogger<BlazorReport3Controller> logger)
         {
